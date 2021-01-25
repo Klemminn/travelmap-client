@@ -1,2 +1,2 @@
-import * as PlaceService from './PlaceService';
-export { PlaceService };
+import * as PageService from './PageService';
+export { PageService };

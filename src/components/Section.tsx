@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from 'styles';
 
-import { PlaceSection } from 'types';
+import { PageSection } from 'types';
 
 import * as Images from './Images';
 import * as Text from './Text';
@@ -15,7 +15,7 @@ const Title = styled(Text.Title)`
 `;
 
 const InformationText = styled(Text.Information)`
-  margin: 1rem 0;
+  margin: 1rem 0 1rem 4rem;
   color: ${Colors.BlackText};
 `;
 
@@ -30,25 +30,41 @@ const DoubleImageContainer = styled.div`
 `;
 
 type SectionProps = {
-  section: PlaceSection;
+  section: PageSection;
 };
 
 const CaptionedImages: React.FC<SectionProps> = ({ section }) => {
-  const { image_1, image_1_caption, image_2, image_2_caption } = section;
-  const hasNoImage = !image_1 && !image_2;
-  const hasTwoImages = image_1 && image_2;
+  const {
+    image1Tall,
+    image1Wide,
+    image1Caption,
+    image2Tall,
+    image2Wide,
+    image2Caption,
+  } = section;
+  const hasNoImage = !image1Tall && !image2Tall;
+  const hasTwoImages = image1Tall && image2Tall;
   if (hasNoImage) return null;
   if (!hasTwoImages)
     return (
       <Images.CaptionedImage
-        caption={image_1_caption! ?? image_2_caption!}
-        src={image_1?.url! ?? image_2?.url!}
+        caption={image1Caption! ?? image2Caption!}
+        alt={image1Wide?.alt! ?? image2Wide?.alt!}
+        src={image1Wide?.url! ?? image2Wide?.url!}
       />
     );
   return (
     <DoubleImageContainer>
-      <Images.CaptionedImage caption={image_1_caption!} src={image_1?.url!} />
-      <Images.CaptionedImage caption={image_2_caption!} src={image_2?.url!} />
+      <Images.CaptionedImage
+        caption={image1Caption!}
+        alt={image1Tall?.alt!}
+        src={image1Tall?.url!}
+      />
+      <Images.CaptionedImage
+        caption={image2Caption!}
+        alt={image2Tall?.alt!}
+        src={image2Tall?.url!}
+      />
     </DoubleImageContainer>
   );
 };

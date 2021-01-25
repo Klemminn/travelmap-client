@@ -1,32 +1,14 @@
 import { Image, PageSection } from './Misc';
 
-export type Place = {
+export type Experience = {
   id: number;
   title: string;
   headerImage: Image;
-  description: string;
-  address: string;
-  facebookUrl: string;
-  twitterUrl: string;
-  instagramUrl: string;
-  latitude: number;
-  longitude: number;
-  tags: string[];
   sections: PageSection[];
   images: Image[];
 };
 
-export type PlacePortrait = {
-  id: number;
-  address: string;
-  portraitImage: Image;
-  title: string;
-  meta: {
-    slug: string;
-  };
-};
-
-export type PlacePage = Place & {
+export type ExperiencePage = Experience & {
   meta: {
     type: string;
     detailUrl: string;

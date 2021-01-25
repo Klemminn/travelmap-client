@@ -8,6 +8,10 @@ const Container = styled.div`
   display: flex;
 `;
 
+const Separator = styled(FaChevronRight)`
+  margin: 0 0.3rem;
+`;
+
 const CrumbContainer = styled.div`
   display: flex;
   align-items: center;
@@ -26,9 +30,9 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ crumbs }) => {
   return (
     <Container>
       {crumbs.map((crumb, idx) => (
-        <CrumbContainer>
+        <CrumbContainer key={idx}>
           <Link {...crumb} />
-          {idx < crumbs.length - 1 && <FaChevronRight />}
+          {idx < crumbs.length - 1 && <Separator />}
         </CrumbContainer>
       ))}
     </Container>

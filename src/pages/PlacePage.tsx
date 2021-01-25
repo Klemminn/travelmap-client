@@ -11,8 +11,8 @@ import {
   TitleBanner,
   TitleTwoLines,
 } from 'components';
-import { PlaceService } from 'services';
-import { Place } from 'types';
+import { PageService } from 'services';
+import { PlacePage as PlacePageType } from 'types';
 import styled from 'styled-components';
 
 const SideContainer = styled.div`
@@ -21,24 +21,20 @@ const SideContainer = styled.div`
   align-items: center;
 `;
 
-type PlacePageParams = {
-  placeSlug: string;
-};
-
 const PlacePage: React.FC = () => {
-  const { placeSlug }: PlacePageParams = useParams();
-  const [place, setPlace] = useState<Place | null>(null);
+  const slug = useParams<{ slug: string }>().slug;
+  const [place, setPlace] = useState<PlacePageType | null>(null);
   useEffect(() => {
     getPlace();
-  }, []);
+  }, [slug]);
 
   const getPlace = async () => {
-    const response = await PlaceService.getPlacePage(placeSlug);
+    const response = await PageService.getPlacePage(slug);
     setPlace(response);
   };
 
   return !place ? null : (
-    <Containers.PageContainer topImageSrc={place.header_image.url}>
+    <Containers.PageContainer image={place.headerImage}>
       <TitleBanner title={place.title}>
         <Breadcrumbs
           crumbs={[
@@ -47,8 +43,8 @@ const PlacePage: React.FC = () => {
               link: '/places',
             },
             {
-              label: place.region_name,
-              link: `/regions/${place.region_name}`,
+              label: place.meta.parent?.title ?? '',
+              link: `/regions/${place.meta.parent?.title ?? ''}`,
             },
             {
               label: place.title,

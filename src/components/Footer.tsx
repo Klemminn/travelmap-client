@@ -114,9 +114,9 @@ const Footer: React.FC = () => {
               <Link link="/tags/iceCaves" label="Ice Caves" />
             </TitledContent>
           </Titled>
-          <Titled title="Destinations">
+          <Titled title="Regions">
             <TitledContent>
-              <Link link="/regions/capital" label="Capital \& Reykjanes" />
+              <Link link="/regions/capital" label="Capital & Reykjanes" />
               <Link link="/regions/south" label="South" />
               <Link link="/regions/northEast" label="North-East" />
               <Link link="/regions/northWest" label="North-West" />

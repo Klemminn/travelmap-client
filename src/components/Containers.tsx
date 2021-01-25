@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Colors } from 'styles';
+import { Image } from 'types';
 
 const Container = styled.div``;
 
 const TopImage = styled.img`
   width: 100%;
+  min-height: 0.45vw;
 `;
 
 type ImageContainerProps = {
-  imageSrc: string;
+  image: Image;
 };
 
-export const TopImageContainer: React.FC<ImageContainerProps> = ({
-  imageSrc,
-}) => (
+export const TopImageContainer: React.FC<ImageContainerProps> = ({ image }) => (
   <Container>
-    <TopImage src={imageSrc} />
+    <TopImage src={image.url} alt={image.alt} />
   </Container>
 );
 
@@ -32,7 +32,7 @@ export const AppContainer = styled.div`
 `;
 
 type PageContainerProps = {
-  topImageSrc: string;
+  image: Image;
 };
 
 const PageContentContainer = styled.div`
@@ -42,10 +42,10 @@ const PageContentContainer = styled.div`
 
 export const PageContainer: React.FC<PageContainerProps> = ({
   children,
-  topImageSrc,
+  image,
 }) => (
   <Container>
-    <TopImageContainer imageSrc={topImageSrc} />
+    <TopImageContainer image={image} />
     <PageContentContainer>{children}</PageContentContainer>
   </Container>
 );

@@ -35,7 +35,7 @@ type SectionProps = {
 const Section = styled.div<SectionProps>`
   font-size: 1.8rem;
   border-bottom: ${({ selected }) =>
-    selected ? `0.3rem solid ${Colors.White}` : undefined};
+    `0.3rem solid ${selected ? Colors.White : 'transparent'}`};
   &:hover {
     border-bottom: 0.3rem solid ${Colors.GreyDark};
   }
@@ -47,20 +47,16 @@ const sections = [
     route: '/map',
   },
   {
+    title: 'Regions',
+    route: '/places',
+  },
+  {
     title: 'Experience',
     route: '/experience',
   },
   {
-    title: 'Destinations',
-    route: '/places',
-  },
-  {
-    title: 'Practical info',
-    route: '/practical',
-  },
-  {
-    title: 'About',
-    route: '/about',
+    title: 'Blog',
+    route: '/blog',
   },
 ];
 

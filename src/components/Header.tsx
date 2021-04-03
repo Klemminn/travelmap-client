@@ -72,7 +72,7 @@ const Header: React.FC = () => {
             key={section.route}
             selected={location.pathname.startsWith(section.route)}
           >
-            <Link label={section.title} link={section.route} noDecoration />
+            <Link label={section.title} link={section.route} plain />
           </Section>
         ))}
       </SectionsContainer>

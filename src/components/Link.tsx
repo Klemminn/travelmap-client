@@ -5,12 +5,11 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Colors } from 'styles';
 
 type StyledLinkProps = {
-  noDecoration?: boolean;
+  plain?: number;
 };
 
 const StyledLink = styled(RouterLink)<StyledLinkProps>`
-  ${({ noDecoration }) =>
-    noDecoration ? 'text-decoration: none !important;' : ''}
+  ${({ plain }) => (plain ? 'text-decoration: none !important;' : '')}
   color: ${Colors.White};
   &:hover {
     color: ${Colors.White};
@@ -20,12 +19,12 @@ const StyledLink = styled(RouterLink)<StyledLinkProps>`
 type LinkProps = {
   label: string;
   link?: string;
-  noDecoration?: boolean;
+  plain?: boolean;
 };
 
-const Link: React.FC<LinkProps> = ({ label, link, noDecoration }) =>
+const Link: React.FC<LinkProps> = ({ label, link, plain }) =>
   link ? (
-    <StyledLink noDecoration={noDecoration} to={link}>
+    <StyledLink plain={plain ? 1 : 0} to={link}>
       {label}
     </StyledLink>
   ) : (

@@ -27,7 +27,6 @@ export const AppContainer = styled.div`
   height: 100%;
   > div {
     max-width: 1920px;
-    width: 100%;
   }
   background-color: ${Colors.WhiteSmoke};
 `;

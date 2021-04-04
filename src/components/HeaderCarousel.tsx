@@ -22,6 +22,7 @@ import LinkWrapper from './LinkWrapper';
 
 const StyledCarousel = styled(CarouselProvider)`
   display: flex;
+  align-items: center;
 `;
 
 const SlideContainer = styled.div`
@@ -68,7 +69,7 @@ const CallToActionIcon = styled(ActionIcon)`
 
 const ButtonContainer = styled.div`
   position: absolute;
-  height: 100%;
+  height: 30%;
   z-index: 2;
   button {
     font-size: 5rem;

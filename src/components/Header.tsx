@@ -15,6 +15,7 @@ const HeaderContainer = styled.div`
   position: absolute;
   color: ${Colors.White};
   text-transform: uppercase;
+  z-index: 2;
 `;
 
 const HeaderLogo = styled(Logo)`

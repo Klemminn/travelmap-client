@@ -31,21 +31,24 @@ export const AppContainer = styled.div`
   background-color: ${Colors.WhiteSmoke};
 `;
 
-type PageContainerProps = {
-  image: Image;
-};
-
 const PageContentContainer = styled.div`
   padding: 6rem 7rem;
   background-color: ${Colors.White};
 `;
 
+type PageContainerProps = {
+  header?: JSX.Element;
+  headerImage?: Image;
+};
+
 export const PageContainer: React.FC<PageContainerProps> = ({
   children,
-  image,
+  header,
+  headerImage,
 }) => (
   <Container>
-    <TopImageContainer image={image} />
+    {headerImage && <TopImageContainer image={headerImage} />}
+    {header}
     <PageContentContainer>{children}</PageContentContainer>
   </Container>
 );

@@ -4,8 +4,10 @@ import * as Layout from './Layout';
 import * as Text from './Text';
 
 import Breadcrumbs from './Breadcrumbs';
+import Carousel from './Carousel';
 import Footer from './Footer';
 import Header from './Header';
+import HeaderCarousel from './HeaderCarousel';
 import Link from './Link';
 import LinkWrapper from './LinkWrapper';
 import Logo from './Logo';
@@ -16,9 +18,11 @@ import TitleTwoLines from './TitleTwoLines';
 
 export {
   Breadcrumbs,
+  Carousel,
   Containers,
   Footer,
   Header,
+  HeaderCarousel,
   Images,
   Layout,
   Link,

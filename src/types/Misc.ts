@@ -19,3 +19,16 @@ export type PageSection = {
   image2Tall: Image | null;
   image2Caption: string | null;
 };
+
+export type HeaderPage = {
+  headerImage: string;
+  pageType: string;
+  title: string;
+  subtitle: string;
+  slug: string;
+};
+
+export type FrontPage = {
+  title: string;
+  pages: HeaderPage[];
+};

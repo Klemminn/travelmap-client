@@ -4,6 +4,7 @@ import { Colors } from 'styles';
 
 const LinkWrapper = styled(Link)`
   color: ${Colors.White} !important;
+  text-decoration: none !important;
 `;
 
 export default LinkWrapper;

@@ -34,7 +34,7 @@ const ExperiencePage: React.FC = () => {
   };
 
   return !region ? null : (
-    <Containers.PageContainer image={region.headerImage}>
+    <Containers.PageContainer headerImage={region.headerImage}>
       <TitleBanner title={region.title}>
         <Breadcrumbs
           crumbs={[

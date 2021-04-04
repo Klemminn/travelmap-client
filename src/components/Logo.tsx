@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div``;
+import LinkWrapper from './LinkWrapper';
 
 const Text = styled.div`
   font-size: 0.8rem;
@@ -20,11 +20,11 @@ const BottomText = styled(Text)`
 `;
 
 const Logo: React.FC = ({ ...rest }) => (
-  <Container {...rest}>
+  <LinkWrapper to="/" {...rest}>
     <TopText>Just</TopText>
     <MiddleText>Iceland</MiddleText>
     <BottomText>Things</BottomText>
-  </Container>
+  </LinkWrapper>
 );
 
 export default Logo;

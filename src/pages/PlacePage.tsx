@@ -34,7 +34,7 @@ const PlacePage: React.FC = () => {
   };
 
   return !place ? null : (
-    <Containers.PageContainer image={place.headerImage}>
+    <Containers.PageContainer headerImage={place.headerImage}>
       <TitleBanner title={place.title}>
         <Breadcrumbs
           crumbs={[
@@ -44,7 +44,9 @@ const PlacePage: React.FC = () => {
             },
             {
               label: place.meta.parent?.title ?? '',
-              link: `/regions/${place.meta.parent?.title ?? ''}`,
+              link: `/regions/${
+                place.meta.parent?.title.toLocaleLowerCase() ?? ''
+              }`,
             },
             {
               label: place.title,

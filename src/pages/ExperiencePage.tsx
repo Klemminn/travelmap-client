@@ -18,7 +18,7 @@ const ExperiencePage: React.FC = () => {
   };
 
   return !experience ? null : (
-    <Containers.PageContainer image={experience.headerImage}>
+    <Containers.PageContainer headerImage={experience.headerImage}>
       <TitleBanner title={experience.title}>
         <Breadcrumbs
           crumbs={[

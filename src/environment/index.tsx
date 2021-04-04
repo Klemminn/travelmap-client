@@ -7,7 +7,7 @@ const production: EnvParams = {
 };
 
 const local: EnvParams = {
-  api: 'http://localhost:8000/api/v2',
+  api: 'http://localhost:8000/v2',
 };
 
 const env = process.env.REACT_APP_ENV;

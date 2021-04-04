@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const ScrollToTop: React.FC = () => {
+type ScrollToTopProps = {
+  elementId: string;
+};
+
+const ScrollToTop: React.FC<ScrollToTopProps> = ({ elementId }) => {
   const history = useHistory();
   useEffect(() => {
     const removeListener = history.listen(() => {
-      window.scrollTo(0, 0);
+      document.getElementById(elementId)?.scrollTo(0, 0);
     });
     return () => {
       removeListener();

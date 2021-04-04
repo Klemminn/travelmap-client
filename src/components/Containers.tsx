@@ -24,6 +24,7 @@ export const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
   > div {
     max-width: 1920px;
     width: 100%;

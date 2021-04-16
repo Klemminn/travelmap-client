@@ -18,6 +18,10 @@ const PreviewPage: React.FC = () => {
     // const data = await PageService.getPreviewData(params);
     if (params.content_type === 'pages.placepage') {
       history.push(`/placePreview/${params.token}?`);
+    } else if (params.content_type === 'pages.experiencepage') {
+      history.push(`/experiencePreview/${params.token}?`);
+    } else if (params.content_type === 'pages.blogpage') {
+      history.push(`/blogPreview/${params.token}?`);
     }
   };
 

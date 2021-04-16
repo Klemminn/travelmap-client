@@ -53,9 +53,15 @@ const App = () => (
                   component={PlacePage}
                 />
                 <Route exact path="/blog/:slug" component={BlogPage} />
+                <Route exact path="/blogPreview/:token" component={BlogPage} />
                 <Route
                   exact
                   path="/experience/:slug"
+                  component={ExperiencePage}
+                />
+                <Route
+                  exact
+                  path="/experiencePreview/:token"
                   component={ExperiencePage}
                 />
                 <Route exact path="/regions/:slug" component={RegionPage} />

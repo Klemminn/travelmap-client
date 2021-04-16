@@ -6,14 +6,19 @@ import { PageService } from 'services';
 import { BlogPage as BlogPageType } from 'types';
 
 const BlogPage: React.FC = () => {
-  const slug = useParams<{ slug: string }>().slug;
+  const { slug, token } = useParams<{ slug?: string; token?: string }>();
   const [blog, setBlog] = useState<BlogPageType | null>(null);
   useEffect(() => {
-    getPlace();
-  }, []);
+    getBlog();
+  }, [slug, token]);
 
-  const getPlace = async () => {
-    const response = await PageService.getBlogPage(slug);
+  const getBlog = async () => {
+    const response = await (slug
+      ? PageService.getBlogPage(slug)
+      : PageService.getPreviewData({
+          token: token!,
+          content_type: 'pages.blogpage',
+        }));
     setBlog(response);
   };
 

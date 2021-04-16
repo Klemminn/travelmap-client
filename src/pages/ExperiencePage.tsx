@@ -6,14 +6,19 @@ import { PageService } from 'services';
 import { ExperiencePage as ExperiencePageType } from 'types';
 
 const ExperiencePage: React.FC = () => {
-  const slug = useParams<{ slug: string }>().slug;
+  const { slug, token } = useParams<{ slug?: string; token?: string }>();
   const [experience, setExperience] = useState<ExperiencePageType | null>(null);
   useEffect(() => {
-    getPlace();
-  }, []);
+    getExperience();
+  }, [slug, token]);
 
-  const getPlace = async () => {
-    const response = await PageService.getExperiencePage(slug);
+  const getExperience = async () => {
+    const response = await (slug
+      ? PageService.getExperiencePage(slug)
+      : PageService.getPreviewData({
+          token: token!,
+          content_type: 'pages.experiencepage',
+        }));
     setExperience(response);
   };
 

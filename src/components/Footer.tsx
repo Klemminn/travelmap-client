@@ -116,10 +116,13 @@ const Footer: React.FC = () => {
           </Titled>
           <Titled title="Regions">
             <TitledContent>
-              <Link link="/regions/capital" label="Capital & Reykjanes" />
+              <Link link="/regions/capital" label="Capital" />
+              <Link link="/regions/reykjanes" label="Reykjanes" />
+              <Link link="/regions/north" label="North" />
+              <Link link="/regions/east" label="East" />
               <Link link="/regions/south" label="South" />
-              <Link link="/regions/northEast" label="North-East" />
-              <Link link="/regions/northWest" label="North-West" />
+              <Link link="/regions/west" label="West" />
+              <Link link="/regions/westfjords" label="Westfjords" />
               <Link link="/regions/highlands" label="Highlands" />
             </TitledContent>
           </Titled>

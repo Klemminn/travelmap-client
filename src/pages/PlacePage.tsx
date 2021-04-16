@@ -75,7 +75,7 @@ const PlacePage: React.FC = () => {
             <Images.Image src="/assets/iceland-silhouette.png" width="100%" />
             <Text.Text>Address: {place.address}</Text.Text>
             <Text.Text>
-              Coordinates: {place.latitude} - {place.longitude}
+              Coordinates: {place.latitude}, {place.longitude}
             </Text.Text>
             <TitleTwoLines>Services</TitleTwoLines>
             <Services services={place.services} />

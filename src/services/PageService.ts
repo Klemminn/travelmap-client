@@ -1,6 +1,13 @@
 import connector from './connector';
 
-import { ExperiencePage, FrontPage, PlacePage, RegionPage } from 'types';
+import {
+  ExperiencePage,
+  FrontPage,
+  PlacePage,
+  PreviewData,
+  PreviewParams,
+  RegionPage,
+} from 'types';
 
 export const getPlaces = async (regionPageId: string): Promise<PlacePage[]> => {
   const { data } = await connector.get(
@@ -35,4 +42,11 @@ export const getRegionPage = async (slug: string): Promise<RegionPage> => {
   const { data } = await connector.get(`/regions/${slug}/`);
   const places = await getPlaces(data.id);
   return { ...data, places };
+};
+
+export const getPreviewData = async (
+  params: PreviewParams,
+): Promise<PreviewData> => {
+  const { data } = await connector.get(`/page_preview/1/`, { params });
+  return data;
 };

@@ -32,3 +32,7 @@ export type FrontPage = {
   title: string;
   pages: HeaderPage[];
 };
+
+export type PreviewParams = { content_type: string; token: string };
+
+export type PreviewData = any;

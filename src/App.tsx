@@ -13,6 +13,7 @@ import BlogPage from 'pages/BlogPage';
 import ExperiencePage from 'pages/ExperiencePage';
 import FrontPage from 'pages/FrontPage';
 import PlacePage from 'pages/PlacePage';
+import PreviewPage from 'pages/PreviewPage';
 import RegionPage from 'pages/RegionPage';
 import ScrollToTop from 'components/ScrollToTop';
 
@@ -44,7 +45,13 @@ const App = () => (
               <Header />
               <Switch location={location}>
                 <Route exact path="/" component={FrontPage} />
+                <Route exact path="/preview" component={PreviewPage} />
                 <Route exact path="/places/:slug" component={PlacePage} />
+                <Route
+                  exact
+                  path="/placePreview/:token"
+                  component={PlacePage}
+                />
                 <Route exact path="/blog/:slug" component={BlogPage} />
                 <Route
                   exact

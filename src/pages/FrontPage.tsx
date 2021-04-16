@@ -1,6 +1,6 @@
-import { Containers, HeaderCarousel } from 'components';
 import React, { useEffect, useState } from 'react';
 
+import { Containers, HeaderCarousel } from 'components';
 import { PageService } from 'services';
 import { FrontPage as FrontPageData } from 'types';
 

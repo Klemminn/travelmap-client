@@ -22,14 +22,19 @@ const SideContainer = styled.div`
 `;
 
 const PlacePage: React.FC = () => {
-  const slug = useParams<{ slug: string }>().slug;
+  const { slug, token } = useParams<{ slug?: string; token?: string }>();
   const [place, setPlace] = useState<PlacePageType | null>(null);
   useEffect(() => {
     getPlace();
-  }, [slug]);
+  }, [slug, token]);
 
   const getPlace = async () => {
-    const response = await PageService.getPlacePage(slug);
+    const response = await (slug
+      ? PageService.getPlacePage(slug)
+      : PageService.getPreviewData({
+          token: token!,
+          content_type: 'pages.placepage',
+        }));
     setPlace(response);
   };
 

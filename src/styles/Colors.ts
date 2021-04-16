@@ -9,6 +9,8 @@ enum Colors {
   BlueDark = '#2C3850',
   BlueSolid = '#2B384F',
   WhiteSmoke = '#F5F5F5',
+  RedActive = '#A33B20',
+  RedInactive = '#EDD8D2',
 }
 
 export default Colors;

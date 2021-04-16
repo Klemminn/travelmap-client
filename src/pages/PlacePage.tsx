@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
 import {
   Breadcrumbs,
   Containers,
+  Cost,
   Images,
   Layout,
   Section,
+  Services,
+  SocialLinks,
+  Tags,
   Text,
   TitleBanner,
   TitleTwoLines,
 } from 'components';
 import { PageService } from 'services';
 import { PlacePage as PlacePageType } from 'types';
-import styled from 'styled-components';
 
 const SideContainer = styled.div`
   display: flex;
@@ -74,10 +78,19 @@ const PlacePage: React.FC = () => {
               Coordinates: {place.latitude} - {place.longitude}
             </Text.Text>
             <TitleTwoLines>Services</TitleTwoLines>
-            <TitleTwoLines>Opening hours</TitleTwoLines>
-            <TitleTwoLines>Admission fee</TitleTwoLines>
+            <Services services={place.services} />
+            <TitleTwoLines>Notes</TitleTwoLines>
+            {place.notes}
+            <TitleTwoLines>Pricing</TitleTwoLines>
+            <Cost cost={place.cost} />
             <TitleTwoLines>Share</TitleTwoLines>
+            <SocialLinks
+              facebook={place.facebookUrl}
+              twitter={place.twitterUrl}
+              instagram={place.instagramUrl}
+            />
             <TitleTwoLines>Categories</TitleTwoLines>
+            <Tags tags={place.tags} />
           </SideContainer>
         </Layout.Col>
       </Layout.Row>

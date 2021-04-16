@@ -1,19 +1,24 @@
 import { Image, PageSection } from './Misc';
 
+export type Service = 'coffee' | 'food' | 'toilet';
+
 export type Place = {
   id: number;
   title: string;
   headerImage: Image;
   description: string;
   address: string;
-  facebookUrl: string;
-  twitterUrl: string;
-  instagramUrl: string;
+  facebookUrl: string | null;
+  twitterUrl: string | null;
+  instagramUrl: string | null;
   latitude: number;
   longitude: number;
   tags: string[];
   sections: PageSection[];
   images: Image[];
+  notes: string | null;
+  services: Service[];
+  cost: '0' | '1' | '2' | '3' | '4';
 };
 
 export type PlacePortrait = {

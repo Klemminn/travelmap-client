@@ -12,7 +12,7 @@ const CostContainer = styled.div`
 
 const Cost: React.FC<CostProps> = ({ cost }) => {
   if (cost.includes('Free')) {
-    <CostContainer>{cost}</CostContainer>;
+    return <CostContainer>{cost}</CostContainer>;
   }
   return (
     <CostContainer>

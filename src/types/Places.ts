@@ -15,7 +15,8 @@ export type Place = {
   images: Image[];
   notes: string | null;
   services: Service[];
-  cost: 'Free*' | 'Free' | '$' | '$$' | '$$$' | '$$$$';
+  pricing: 'Free*' | 'Free' | '$' | '$$' | '$$$' | '$$$$';
+  pricingNotes: string | null;
 };
 
 export type PlacePortrait = {

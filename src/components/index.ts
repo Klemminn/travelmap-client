@@ -6,7 +6,7 @@ import * as Text from './Text';
 import Breadcrumbs from './Breadcrumbs';
 import Carousel from './Carousel';
 import Coordinates from './Coordinates';
-import Cost from './Cost';
+import Pricing from './Pricing';
 import Footer from './Footer';
 import Header from './Header';
 import HeaderCarousel from './HeaderCarousel';
@@ -26,7 +26,7 @@ export {
   Carousel,
   Containers,
   Coordinates,
-  Cost,
+  Pricing,
   Footer,
   Header,
   HeaderCarousel,

@@ -6,7 +6,7 @@ import {
   Breadcrumbs,
   Containers,
   Coordinates,
-  Cost,
+  Pricing,
   Images,
   Layout,
   Section,
@@ -84,7 +84,8 @@ const PlacePage: React.FC = () => {
             <TitleTwoLines>Services</TitleTwoLines>
             <Services services={place.services} />
             <TitleTwoLines>Pricing</TitleTwoLines>
-            <Cost cost={place.cost} />
+            <Pricing pricing={place.pricing} />
+            {place.pricingNotes}
             <TitleTwoLines>Notes</TitleTwoLines>
             {place.notes}
             <TitleTwoLines>Share</TitleTwoLines>

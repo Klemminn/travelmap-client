@@ -11,13 +11,12 @@ const CostContainer = styled.div`
 `;
 
 const Cost: React.FC<CostProps> = ({ cost }) => {
-  const costInt = Number(cost);
-  if (costInt === 0) {
-    <CostContainer>Free</CostContainer>;
+  if (cost.includes('Free')) {
+    <CostContainer>{cost}</CostContainer>;
   }
   return (
     <CostContainer>
-      {Array.from(Array(costInt)).map((num) => (
+      {Array.from(Array(cost.length)).map((num) => (
         <FaDollarSign key={num} />
       ))}
     </CostContainer>

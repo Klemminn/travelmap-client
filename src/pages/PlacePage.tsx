@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import {
   Breadcrumbs,
   Containers,
+  Coordinates,
   Cost,
   Images,
   Layout,
@@ -75,20 +76,19 @@ const PlacePage: React.FC = () => {
             <Images.Image src="/assets/iceland-silhouette.png" width="100%" />
             <Text.Text>Address: {place.address}</Text.Text>
             <Text.Text>
-              Coordinates: {place.latitude}, {place.longitude}
+              <Coordinates
+                latitude={place.latitude}
+                longitude={place.longitude}
+              />
             </Text.Text>
             <TitleTwoLines>Services</TitleTwoLines>
             <Services services={place.services} />
-            <TitleTwoLines>Notes</TitleTwoLines>
-            {place.notes}
             <TitleTwoLines>Pricing</TitleTwoLines>
             <Cost cost={place.cost} />
+            <TitleTwoLines>Notes</TitleTwoLines>
+            {place.notes}
             <TitleTwoLines>Share</TitleTwoLines>
-            <SocialLinks
-              facebook={place.facebookUrl}
-              twitter={place.twitterUrl}
-              instagram={place.instagramUrl}
-            />
+            <SocialLinks />
             <TitleTwoLines>Categories</TitleTwoLines>
             <Tags tags={place.tags} />
           </SideContainer>

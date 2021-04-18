@@ -8,9 +8,6 @@ export type Place = {
   headerImage: Image;
   description: string;
   address: string;
-  facebookUrl: string | null;
-  twitterUrl: string | null;
-  instagramUrl: string | null;
   latitude: number;
   longitude: number;
   tags: string[];
@@ -18,7 +15,7 @@ export type Place = {
   images: Image[];
   notes: string | null;
   services: Service[];
-  cost: '0' | '1' | '2' | '3' | '4';
+  cost: 'Free*' | 'Free' | '$' | '$$' | '$$$' | '$$$$';
 };
 
 export type PlacePortrait = {

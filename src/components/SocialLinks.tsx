@@ -18,33 +18,17 @@ LinkContainer.defaultProps = {
   target: '_blank',
 };
 
-type SocialLinksProps = {
-  facebook: string | null;
-  twitter: string | null;
-  instagram: string | null;
-};
-
-const SocialLinks: React.FC<SocialLinksProps> = ({
-  facebook,
-  twitter,
-  instagram,
-}) => (
+const SocialLinks: React.FC = () => (
   <Container>
-    {facebook && (
-      <LinkContainer href={facebook}>
-        <FaFacebook />
-      </LinkContainer>
-    )}
-    {twitter && (
-      <LinkContainer href={twitter}>
-        <FaTwitter />
-      </LinkContainer>
-    )}
-    {instagram && (
-      <LinkContainer href={instagram}>
-        <FaInstagram />
-      </LinkContainer>
-    )}
+    <LinkContainer>
+      <FaFacebook />
+    </LinkContainer>
+    <LinkContainer>
+      <FaTwitter />
+    </LinkContainer>
+    <LinkContainer>
+      <FaInstagram />
+    </LinkContainer>
   </Container>
 );
 
